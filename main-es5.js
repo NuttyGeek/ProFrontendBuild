@@ -622,7 +622,7 @@ var CheckoutService = /** @class */ (function () {
     CheckoutService.prototype.placePersonalizedOrder = function (data) {
         var mockData = tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({}, data, { true_statements: data.true_statements.join() });
         // const url = `${env.API_URL}/orders/create-personalized-order`;
-        var localUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].API_URL + "/create?model=order";
+        var localUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].API_URL + "create?model=order";
         return this.http.post(localUrl, mockData, { headers: this.headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(function (err) {
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["throwError"])(err);
@@ -633,12 +633,12 @@ var CheckoutService = /** @class */ (function () {
     };
     CheckoutService.prototype.getPersonalizedDietPrice = function () {
         // const url = 'http://95.111.199.28/plans/pricing';
-        var localUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].API_URL + "/diet-plan-pricing";
+        var localUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].API_URL + "diet-plan-pricing";
         return this.http.get(localUrl, { headers: this.headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.amount; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(function (err) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["throwError"])(err); }));
     };
     CheckoutService.prototype.capturePayment = function (details) {
-        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].API_URL + "/capture-payment", details).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(function (err) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["throwError"])(err); }));
+        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].API_URL + "capture-payment", details).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(function (err) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["throwError"])(err); }));
     };
     CheckoutService.prototype.setPricing = function (price) {
         this.pricing = price;
@@ -3001,7 +3001,7 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 var environment = {
-    API_URL: "http://localhost:3000/backend/",
+    API_URL: "/backend/",
     production: false,
     razorpay: {
         key: 'rzp_test_d8qs8mxXhWH9vS',
