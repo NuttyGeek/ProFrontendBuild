@@ -63,7 +63,7 @@ module.exports = "<section class=\"cta\">\n  <div class=\"container\">\n    <div
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"diet-plan\">\n  <app-announcement></app-announcement>\n  <div class=\"container\">\n    <app-navbar></app-navbar>\n    <div class=\"header-content\">\n      <h1>My Diet Plan</h1>\n      <div class=\"week-header\">\n        <mat-icon class=\"mat-icon\" aria-hidden=\"false\" aria-label=\"Previous Week\" (click)=\"weekPrev()\" *ngIf=\"selectedWeek !== weekOptions[0]\">keyboard_arrow_left</mat-icon>\n        <div class=\"week-title\">{{ selectedWeek }}</div>\n        <mat-icon aria-hidden=\"false\" class=\"mat-icon\" aria-label=\"Next Week\" (click)=\"weekNext()\" *ngIf=\"selectedWeek !== weekOptions[weekOptions.length - 1]\" >keyboard_arrow_right</mat-icon>\n      </div>\n      <div class=\"weekday-header\">\n        <div class=\"weekday-item\" *ngFor=\"let weekday of weekdayOptions\" [ngClass]=\"{'selected' : selectedWeekday === weekday}\" (click)=\"weekdaySelected(weekday)\">{{ weekday }}</div>\n      </div>\n      <div class=\"recipe-body\">\n        <app-meals-list></app-meals-list>\n      </div>\n    </div>\n  </div>\n</section>\n"
+module.exports = "<section id=\"diet-plan\">\n  <app-announcement></app-announcement>\n  <div class=\"container\">\n    <app-navbar></app-navbar>\n    <div class=\"header-content\">\n      <h1>My Diet Plan</h1>\n      <div class=\"week-header\">\n        <mat-icon class=\"mat-icon\" aria-hidden=\"false\" aria-label=\"Previous Week\" (click)=\"weekPrev()\" *ngIf=\"selectedWeek !== weekOptions[0]\">keyboard_arrow_left</mat-icon>\n        <div class=\"week-title\">Week {{ selectedWeek }}</div>\n        <mat-icon aria-hidden=\"false\" class=\"mat-icon\" aria-label=\"Next Week\" (click)=\"weekNext()\" *ngIf=\"selectedWeek !== weekOptions[weekOptions.length - 1]\" >keyboard_arrow_right</mat-icon>\n      </div>\n      <div >\n        <div class=\"weekday-header\" *ngIf=\"selectedWeek === '1'\">\n        <div class=\"weekday-item\" *ngFor=\"let weekday of weekOneDays\" [ngClass]=\"{'selected' : selectedWeekday === weekday}\" (click)=\"weekdaySelected(weekday)\">{{ weekday }}</div>\n        </div>\n        <div class=\"weekday-header\" *ngIf=\"selectedWeek === '2'\">\n          <div class=\"weekday-item\" *ngFor=\"let weekday of weekTwoDays\" [ngClass]=\"{'selected' : selectedWeekday === weekday}\" (click)=\"weekdaySelected(weekday)\">{{ weekday }}</div>\n        </div>\n        <div class=\"weekday-header\" *ngIf=\"selectedWeek === '3'\">\n          <div class=\"weekday-item\" *ngFor=\"let weekday of weekThreeDays\" [ngClass]=\"{'selected' : selectedWeekday === weekday}\" (click)=\"weekdaySelected(weekday)\">{{ weekday }}</div>\n        </div>\n        <div class=\"weekday-header\" *ngIf=\"selectedWeek === '4'\">\n          <div class=\"weekday-item\" *ngFor=\"let weekday of weekFourDays\" [ngClass]=\"{'selected' : selectedWeekday === weekday}\" (click)=\"weekdaySelected(weekday)\">{{ weekday }}</div>\n        </div>\n        <div class=\"weekday-header\" *ngIf=\"selectedWeek === '5'\">\n          <div class=\"weekday-item\" *ngFor=\"let weekday of weekFiveDays\" [ngClass]=\"{'selected' : selectedWeekday === weekday}\" (click)=\"weekdaySelected(weekday)\">{{ weekday }}</div>\n        </div>\n      </div>\n      <div class=\"recipe-body\">\n        <app-meals-list [selectedDayData]=\"selectedDayData\"></app-meals-list>\n      </div>\n    </div>\n  </div>\n</section>\n"
 
 /***/ }),
 
@@ -96,7 +96,7 @@ module.exports = "<section id=\"header\">\n  <div class=\"container\">\n\n  <app
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div class=\"single-meal\">\n  <div class=\"container\">\n    <mat-card class=\"mat-card\">\n      <div class=\"mat-card-content\">\n        <div class=\"my-card-header\">\n          <div class=\"meal-image-container\">\n            <img src=\"../../../assets/drink.jpg\" class=\"meal-image\" alt=\"\">\n          </div>\n          <div class=\"meal-overview-container\">\n            <h3>Recipe Name</h3>\n            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo expedita sunt incidunt fugiat, ullam deserunt eum error labore possimus alias inventore explicabo vel ipsa repellat odit nemo, consequatur voluptatem ea!</p>\n          </div>\n          <div class=\"expansion-button\">\n            <mat-icon class=\"down-arrow\" type=\"button\" data-toggle=\"collapse\" aria-expanded=\"false\" data-target=\"#meal\">keyboard_arrow_down</mat-icon>\n          </div>\n        </div>\n        <div class=\"mat-card-description collapse multi-collapse\" id=\"meal\">\n          <p>Description</p>\n          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex non adipisci deleniti quidem at mollitia, laboriosam provident accusantium quod enim totam incidunt corrupti minima id a numquam rerum tempore ipsa!</p>\n        </div>\n\n      </div>\n    </mat-card>\n  </div>\n  <button class=\"btn btn-primary\" type=\"button\" data-toggle=\"collapse\" data-target=\"#multiCollapseExample2\" aria-expanded=\"false\" aria-controls=\"multiCollapseExample2\">Toggle second element</button>\n  <div class=\"collapse multi-collapse\" id=\"multiCollapseExample2\">\n    <div class=\"card card-body\">\n      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.\n    </div>\n  </div>\n</div>\n -->\n\n\n <mat-card class=\"example-card\">\n   <div class=\"container\">\n     <div class=\"row\">\n       <div class=\"col-3 meal-image\">\n       </div>\n       <div class=\"col-9\">\n        <mat-card-header>\n          <mat-card-title>Recipe 1</mat-card-title>\n          <mat-card-subtitle>Subtitle</mat-card-subtitle>\n        </mat-card-header>\n        <mat-card-content>\n          <p>\n            description of the Recipe\n          </p>\n        </mat-card-content>\n       </div>\n     </div>\n   </div>\n</mat-card>"
+module.exports = "<!-- <div class=\"single-meal\">\n  <div class=\"container\">\n    <mat-card class=\"mat-card\">\n      <div class=\"mat-card-content\">\n        <div class=\"my-card-header\">\n          <div class=\"meal-image-container\">\n            <img src=\"../../../assets/drink.jpg\" class=\"meal-image\" alt=\"\">\n          </div>\n          <div class=\"meal-overview-container\">\n            <h3>Recipe Name</h3>\n            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo expedita sunt incidunt fugiat, ullam deserunt eum error labore possimus alias inventore explicabo vel ipsa repellat odit nemo, consequatur voluptatem ea!</p>\n          </div>\n          <div class=\"expansion-button\">\n            <mat-icon class=\"down-arrow\" type=\"button\" data-toggle=\"collapse\" aria-expanded=\"false\" data-target=\"#meal\">keyboard_arrow_down</mat-icon>\n          </div>\n        </div>\n        <div class=\"mat-card-description collapse multi-collapse\" id=\"meal\">\n          <p>Description</p>\n          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex non adipisci deleniti quidem at mollitia, laboriosam provident accusantium quod enim totam incidunt corrupti minima id a numquam rerum tempore ipsa!</p>\n        </div>\n\n      </div>\n    </mat-card>\n  </div>\n  <button class=\"btn btn-primary\" type=\"button\" data-toggle=\"collapse\" data-target=\"#multiCollapseExample2\" aria-expanded=\"false\" aria-controls=\"multiCollapseExample2\">Toggle second element</button>\n  <div class=\"collapse multi-collapse\" id=\"multiCollapseExample2\">\n    <div class=\"card card-body\">\n      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.\n    </div>\n  </div>\n</div>\n -->\n\n\n <mat-card class=\"example-card\">\n   <div class=\"container\">\n     <div class=\"row\">\n       <div class=\"col-3 meal-image\">\n       </div>\n       <div class=\"col-9\">\n        <mat-card-header>\n          <mat-card-title>{{data.meal.name}}</mat-card-title>\n          <mat-card-subtitle>{{data.time}}</mat-card-subtitle>\n        </mat-card-header>\n        <mat-card-content>\n          <p>\n            description of the Recipe\n          </p>\n        </mat-card-content>\n       </div>\n     </div>\n   </div>\n</mat-card>"
 
 /***/ }),
 
@@ -107,7 +107,7 @@ module.exports = "<!-- <div class=\"single-meal\">\n  <div class=\"container\">\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngFor = \"let meal of meals\" >\n  <app-meal (click)=\"openDialog()\"></app-meal>\n</div>\n"
+module.exports = "<div *ngFor = \"let data of selectedDayData\" >\n  <app-meal [data]=\"data\" (click)=\"openDialog(data)\"></app-meal>\n</div>\n"
 
 /***/ }),
 
@@ -140,7 +140,7 @@ module.exports = "\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"recipe-section\">\n    <div class=\"container\">\n        <h4>Recipie Name</h4>\n        <div class=\"row recipe-container\">\n\n            <div class=\"col-md recipe-image\">\n                <div class=\"overlay\">\n                    <button class=\"nutrition-buttons\">Carbs 2g</button>\n                    <button class=\"nutrition-buttons\">Protein 1.5g</button>\n                    <button class=\"nutrition-buttons\">Fat 0.2g</button>\n                    <button class=\"nutrition-buttons\">Cal 1300 kcal</button>\n                </div>\n            </div>\n            <div class=\"col-md recipe-text\">\n                <mat-tab-group mat-align-tabs=\"center\">\n                    <mat-tab label=\"Ingridient\" class=\"tab\"> Content 1 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, eligendi. Numquam id dicta doloremque necessitatibus excepturi deleniti sint, eum molestiae iure eos veritatis rem sed recusandae a. Autem, dolor amet.</p><br><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam consectetur voluptatem voluptates atque ad? Inventore consequuntur aut laboriosam quidem aspernatur eos corporis qui, ipsum atque aliquid possimus autem soluta dolorem?</p> </mat-tab>\n                    <mat-tab label=\"Method\">Method 1 <br>\n                        point 1 <br>\n                        point2 <br>\n                        point3 <br>\n                    </mat-tab>\n                  </mat-tab-group>\n            </div>\n        </div>\n    </div>\n</section>\n"
+module.exports = "<section id=\"recipe-section\">\n    <div class=\"container\">\n        <h4>{{mealName}}</h4>\n        <div class=\"row recipe-container\">\n\n            <div class=\"col-md recipe-image\">\n                <div class=\"overlay\">\n                    <button class=\"nutrition-buttons\">Carbs {{totalCarbs}}g</button>\n                    <button class=\"nutrition-buttons\">Protein {{totalProtein}}g</button>\n                    <button class=\"nutrition-buttons\">Fat {{totalFat}}g</button>\n                    <button class=\"nutrition-buttons\">Cal {{totalCal}}kcal</button>\n                </div>\n            </div>\n            <div class=\"col-md recipe-text\">\n                <mat-tab-group mat-align-tabs=\"center\">\n                    <mat-tab label=\"Ingridient\" class=\"tab\"><div class=\"main-tab-ing\">\n                        <div class=\"left\" *ngFor=\"let recipe of recipeData\">\n                            <h4>{{recipe.recipe.name}}</h4>\n                            <ul>\n                                <li *ngFor=\"let ing of recipe.recipe.ingredients\">{{ing.name}}</li>\n                            </ul>\n                        </div>\n                    </div></mat-tab>\n                    <mat-tab label=\"Method\">\n                        <div *ngFor=\"let recipe of recipeData\">\n                        <h4>{{recipe.recipe.name}}</h4>\n                        <p>{{recipe.recipe.method}}</p>\n                        </div>\n                    </mat-tab>\n                  </mat-tab-group>\n            </div>\n        </div>\n    </div>\n</section>\n"
 
 /***/ }),
 
@@ -151,7 +151,7 @@ module.exports = "<section id=\"recipe-section\">\n    <div class=\"container\">
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"foodpref-section\">\n    <div class=\"overlay\">\n        <p>Your Personalized Diet Plan is</p>\n    <p>JUST A FEW STEPS AWAY</p>\n    <h3>Food Preferences?</h3> \n    <span class=\"warning\" *ngIf=\"warning\">Please Select A Food Preference</span>\n    <form action=\"\">\n        <input type=\"radio\" name=\"foodpref\" value=\"vegetarian\" [(ngModel)]=\"foodpref\">\n        <input type=\"radio\" name=\"foodpref\" value=\"non_vegetarian\" [(ngModel)]=\"foodpref\">\n        <input type=\"radio\" name=\"foodpref\" value=\"eggetarian\" [(ngModel)]=\"foodpref\"><br>\n        <div class=\"container\">\n            <div class=\"row\">\n                <div class=\" col-md image-div\">\n                    <img src=\"{{ veg? '../../../../../../assets/custom-slides/Foodpreferences/vegetarian highlihgted.svg' : '../../../../../../assets/custom-slides/Foodpreferences/vegetarina.svg'}}\" (click)=\"handleveg()\" alt=\"\" class=\"pref-image\">\n                    <p>Vegetarian</p>\n                </div>\n                <div class=\"col-md image-div\">\n                    <img src=\"{{ nonveg? '../../../../../../assets/custom-slides/Foodpreferences/non veg highlighted.svg' : '../../../../../../assets/custom-slides/Foodpreferences/non-veg.svg'}}\" (click)=\"handlenonveg()\" alt=\"\" class=\"pref-image\">\n                    <p>Non-Vegetarian</p>\n                </div>\n                <div class=\"col-md image-div\">\n                    <img src=\"{{ egg? '../../../../../../assets/custom-slides/Foodpreferences/Eggetarian-highlihgted.svg' : '../../../../../../assets/custom-slides/Foodpreferences/eggetarian.svg'}}\" (click)=\"handleegg()\" alt=\"\" class=\"pref-image\">\n                    <p>Eggetarian</p>\n                </div>\n            </div>\n        </div>\n        \n        \n        \n    </form>\n    <div class=\"container bottom-container\">\n        <div class= \"bottom-row row\">\n            <div class=\" bottom-col col\">\n                <button (click)=\"handlePrev()\" class=\"back\">BACK</button>\n            </div>\n            <!-- <div class=\"bottom-col col\">\n                <button (click)=\"handleNext()\" class=\"next\">Continue</button>\n            </div> -->\n        </div>\n    </div>\n    </div>\n</section>\n\n"
+module.exports = "<section id=\"foodpref-section\">\n    <div class=\"overlay\">\n        <p>Your Personalized Diet Plan is</p>\n    <p>JUST A FEW STEPS AWAY</p>\n    <h3>Food Preferences?</h3> \n    <span class=\"warning\" *ngIf=\"warning\">Please Select A Food Preference</span>\n    <form action=\"\">\n        <input type=\"radio\" name=\"foodpref\" value=\"veg\" [(ngModel)]=\"foodpref\">\n        <input type=\"radio\" name=\"foodpref\" value=\"non_veg\" [(ngModel)]=\"foodpref\">\n        <input type=\"radio\" name=\"foodpref\" value=\"egg\" [(ngModel)]=\"foodpref\"><br>\n        <div class=\"container\">\n            <div class=\"row\">\n                <div class=\" col-md image-div\">\n                    <img src=\"{{ veg? '../../../../../../assets/custom-slides/Foodpreferences/vegetarian highlihgted.svg' : '../../../../../../assets/custom-slides/Foodpreferences/vegetarina.svg'}}\" (click)=\"handleveg()\" alt=\"\" class=\"pref-image\">\n                    <p>Vegetarian</p>\n                </div>\n                <div class=\"col-md image-div\">\n                    <img src=\"{{ nonveg? '../../../../../../assets/custom-slides/Foodpreferences/non veg highlighted.svg' : '../../../../../../assets/custom-slides/Foodpreferences/non-veg.svg'}}\" (click)=\"handlenonveg()\" alt=\"\" class=\"pref-image\">\n                    <p>Non-Vegetarian</p>\n                </div>\n                <div class=\"col-md image-div\">\n                    <img src=\"{{ egg? '../../../../../../assets/custom-slides/Foodpreferences/Eggetarian-highlihgted.svg' : '../../../../../../assets/custom-slides/Foodpreferences/eggetarian.svg'}}\" (click)=\"handleegg()\" alt=\"\" class=\"pref-image\">\n                    <p>Eggetarian</p>\n                </div>\n            </div>\n        </div>\n        \n        \n        \n    </form>\n    <div class=\"container bottom-container\">\n        <div class= \"bottom-row row\">\n            <div class=\" bottom-col col\">\n                <button (click)=\"handlePrev()\" class=\"back\">BACK</button>\n            </div>\n            <!-- <div class=\"bottom-col col\">\n                <button (click)=\"handleNext()\" class=\"next\">Continue</button>\n            </div> -->\n        </div>\n    </div>\n    </div>\n</section>\n\n"
 
 /***/ }),
 
@@ -162,7 +162,7 @@ module.exports = "<section id=\"foodpref-section\">\n    <div class=\"overlay\">
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"goal-section\">\n    <div class=\"overlay\">\n        <p>Your Personalized Diet Plan is</p>\n    <p>JUST A FEW STEPS AWAY</p>\n    <h3>Select A Goal</h3> \n    <span class=\"warning\" *ngIf=\"warning\">Please Select A Goal</span>\n    <form action=\"\">\n        <input type=\"radio\" name=\"goal\" value=\"weightloss\" [(ngModel)]=\"goal\">\n        <input type=\"radio\" name=\"goal\" value=\"weightgain\" [(ngModel)]=\"goal\">\n        <input type=\"radio\" name=\"goal\" value=\"musclebuilding\" [(ngModel)]=\"goal\">\n    </form>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-md\">\n                <button class=\" transparent-button block-button\" (click)=\"handleweightloss()\" [ngClass]=\"{'checked': goal=='weightloss'}\" >Weight Loss</button>\n             </div> \n             <div class=\"col-md\">\n                <button class=\" transparent-button block-button\" (click)=\"handleweightgain()\" [ngClass]=\"{'checked': goal=='weightgain'}\">Weight Gain</button>\n             </div>\n            <div class=\"col-md\">\n            <button class=\" transparent-button block-button\" (click)=\"handlemusclebuilding()\" [ngClass]=\"{'checked': goal=='musclebuilding'}\">Muscle Building</button>\n            </div>\n        </div>\n         \n    </div>\n     \n    \n    \n    <div class=\"container bottom-container\">\n        <div class=\"row bottom-row\">\n            <div class=\"col-md bottom-col\">\n                <button class=\"back\" (click)=\"handlePrev()\" alt=\"\">BACK</button>\n            </div>\n        </div>\n    </div>\n    </div>\n</section>\n"
+module.exports = "<section id=\"goal-section\">\n    <div class=\"overlay\">\n        <p>Your Personalized Diet Plan is</p>\n    <p>JUST A FEW STEPS AWAY</p>\n    <h3>Select A Goal</h3> \n    <span class=\"warning\" *ngIf=\"warning\">Please Select A Goal</span>\n    <form action=\"\">\n        <input type=\"radio\" name=\"goal\" value=\"weight_loss\" [(ngModel)]=\"goal\">\n        <input type=\"radio\" name=\"goal\" value=\"weight_gain\" [(ngModel)]=\"goal\">\n        <input type=\"radio\" name=\"goal\" value=\"muscle_building\" [(ngModel)]=\"goal\">\n    </form>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-md\">\n                <button class=\" transparent-button block-button\" (click)=\"handleweightloss()\" [ngClass]=\"{'checked': goal=='weightloss'}\" >Weight Loss</button>\n             </div> \n             <div class=\"col-md\">\n                <button class=\" transparent-button block-button\" (click)=\"handleweightgain()\" [ngClass]=\"{'checked': goal=='weightgain'}\">Weight Gain</button>\n             </div>\n            <div class=\"col-md\">\n            <button class=\" transparent-button block-button\" (click)=\"handlemusclebuilding()\" [ngClass]=\"{'checked': goal=='musclebuilding'}\">Muscle Building</button>\n            </div>\n        </div>\n         \n    </div>\n     \n    \n    \n    <div class=\"container bottom-container\">\n        <div class=\"row bottom-row\">\n            <div class=\"col-md bottom-col\">\n                <button class=\"back\" (click)=\"handlePrev()\" alt=\"\">BACK</button>\n            </div>\n        </div>\n    </div>\n    </div>\n</section>\n"
 
 /***/ }),
 
@@ -261,7 +261,7 @@ module.exports = "<section id=\"contact-us\" class=\"header\">\n\n    <app-annou
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n    <app-announcement></app-announcement>\n    <section id=\"checkout-section\">\n        <div class=\"container\">\n            <app-navbar></app-navbar>\n            <h2 class=\"heading\">Login</h2>\n            <p>Please provide the information in order to login</p>\n            <hr>\n            <form [formGroup]=\"loginForm\" class=\"checkout-form\">\n                  <mat-form-field appearance=\"fill\" [floatLabel]=\"\">\n                    <mat-label>Email</mat-label>\n                    <input matInput placeholder=\"\" type=\"email\" formControlName=\"email\">\n                  </mat-form-field>\n            </form>\n            <!-- <p class=\"payment-span\">Please select your payment method</p> -->\n            <!-- <div class=\"container payment-container\">\n                <div class=\"row\">\n                    <div class=\"col-md\" [ngClass]=\"{'checked': razorPay==true}\"> <input type=\"radio\" name=\"payment\" value=\"razor\"><img src=\"../../../assets/Razorpay_logo.png\" alt=\"\" (click)=\"handleRazor()\"></div>\n                </div>\n            </div> -->\n            <div class=\"container button-container\">\n                <div class=\"row button-row\">\n                    <div class=\"col button-box\">\n                        <button class=\"grey-button block-button\"(click)=\"handleCancel()\" >Cancel</button>\n                    </div>\n                    <div class=\"col button-box\">\n                        <button class=\" orange-button block-button\" (click)=\"login()\">Proceed</button>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </section>\n</div>"
+module.exports = "<div>\n    <app-announcement></app-announcement>\n    <section id=\"checkout-section\">\n        <div class=\"container\">\n            <app-navbar></app-navbar>\n            <h2 class=\"heading\">Login</h2>\n            <p>Please provide the information in order to login</p>\n            <hr>\n            <p class=\"error\" *ngIf=\"apiError\">Cannot find any Diet Plan with this email</p>\n            <form [formGroup]=\"loginForm\" class=\"checkout-form\">\n                  <mat-form-field appearance=\"fill\" [floatLabel]=\"\">\n                    <mat-label>Email</mat-label>\n                    <input matInput placeholder=\"\" type=\"email\" formControlName=\"email\">\n                  </mat-form-field>\n            </form>\n            <!-- <p class=\"payment-span\">Please select your payment method</p> -->\n            <!-- <div class=\"container payment-container\">\n                <div class=\"row\">\n                    <div class=\"col-md\" [ngClass]=\"{'checked': razorPay==true}\"> <input type=\"radio\" name=\"payment\" value=\"razor\"><img src=\"../../../assets/Razorpay_logo.png\" alt=\"\" (click)=\"handleRazor()\"></div>\n                </div>\n            </div> -->\n            <div class=\"container button-container\">\n                <div class=\"row button-row\">\n                    <div class=\"col button-box\">\n                        <button class=\"grey-button block-button\"(click)=\"handleCancel()\" >Cancel</button>\n                    </div>\n                    <div class=\"col button-box\">\n                        <button class=\" orange-button block-button\" (click)=\"login(loginForm.controls.email.value)\">Proceed</button>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </section>\n</div>"
 
 /***/ }),
 
@@ -596,6 +596,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
+
 
 
 
@@ -611,22 +613,25 @@ let CheckoutService = class CheckoutService {
      * returns order object if everything goes right, returns error if we get error
      */
     placePersonalizedOrder(data) {
-        const mockData = Object.assign({}, data, { true_statements: "sample" });
-        const url = 'http://95.111.199.28/orders/create-personalized-order';
-        const localUrl = 'http://localhost:3000/backend/create?model=order';
+        const mockData = Object.assign({}, data, { true_statements: data.true_statements.join() });
+        // const url = `${env.API_URL}/orders/create-personalized-order`;
+        const localUrl = `${_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].API_URL}/create?model=order`;
         return this.http.post(localUrl, mockData, { headers: this.headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])((err) => {
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["throwError"])(err);
         }));
     }
+    getDietPlanFromServer(email) {
+        return this.http.get(`${_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].API_URL}/get-dietplan?email=${email}`);
+    }
     getPersonalizedDietPrice() {
-        const url = 'http://95.111.199.28/plans/pricing';
-        const localUrl = 'http://localhost:3000/backend/diet-plan-pricing';
+        // const url = 'http://95.111.199.28/plans/pricing';
+        const localUrl = `${_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].API_URL}/diet-plan-pricing`;
         return this.http.get(localUrl, { headers: this.headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])((res) => res.amount), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])((err) => Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["throwError"])(err)));
     }
     capturePayment(details) {
-        return this.http.post('http://localhost:3000/backend/capture-payment', details).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])((err) => Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["throwError"])(err)));
+        return this.http.post(`${_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].API_URL}/capture-payment`, details).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])((err) => Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["throwError"])(err)));
     }
     setPricing(price) {
         this.pricing = price;
@@ -636,6 +641,12 @@ let CheckoutService = class CheckoutService {
     }
     setOrderId(rzp_order_id) {
         this.rzp_order_id = rzp_order_id;
+    }
+    setDietPlan(dietPlan) {
+        this.dietPlan = dietPlan;
+    }
+    getDietPlan() {
+        return this.dietPlan;
     }
     getOrderId() {
         return this.rzp_order_id;
@@ -761,29 +772,84 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DietPlanComponent", function() { return DietPlanComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var src_app_checkout_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/checkout.service */ "./src/app/checkout.service.ts");
+
+
 
 
 let DietPlanComponent = class DietPlanComponent {
-    constructor() {
-        this.weekOptions = ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5'];
+    constructor(service, router) {
+        this.service = service;
+        this.router = router;
+        this.weekOptions = ['1', '2', '3', '4', '5'];
         this.weekdayOptions = ['M', 'T', 'W', 'Th', 'F', 'S', 'Su'];
+        this.weekOneDays = ['1', '2', '3', '4', '5', '6', '7'];
+        this.weekTwoDays = ['8', '9', '10', '11', '12', '13', '14'];
+        this.weekThreeDays = ['15', '16', '17', '18', '19', '20', '21'];
+        this.weekFourDays = ['22', '23', '24', '25', '26', '27', '28'];
+        this.weekFiveDays = ['28', '30', '31'];
         this.selectedWeek = this.weekOptions[0];
-        this.selectedWeekday = this.weekdayOptions[0];
+        this.selectedWeekday = this.weekOneDays[0];
+        this.selectedDayData = [];
     }
     ngOnInit() {
+        this.dietplan = this.service.getDietPlan();
+        if (this.dietplan) {
+            this.selectedDayData = this.dietplan.data.filter((data) => data.day === 1);
+            console.log(":: selected diet Plan", this.selectedDayData);
+        }
+        else {
+            this.router.navigate(['login']);
+        }
     }
     weekNext() {
         const index = this.weekOptions.findIndex((week) => week === this.selectedWeek);
         this.selectedWeek = this.weekOptions[index + 1];
+        this.getSelectedWeekOptions(this.selectedWeek);
+        this.getSelectedDayData(parseInt(this.selectedWeekday));
     }
     weekPrev() {
         const index = this.weekOptions.findIndex((week) => week === this.selectedWeek);
         this.selectedWeek = this.weekOptions[index - 1];
+        this.getSelectedWeekOptions(this.selectedWeek);
+        this.getSelectedDayData(parseInt(this.selectedWeekday));
     }
-    weekdaySelected(week) {
-        this.selectedWeekday = week;
+    weekdaySelected(day) {
+        this.selectedWeekday = day;
+        const dayTrimmed = day.split(' ')[1] ? parseInt(day.split(' ')[1]) : parseInt(day);
+        this.getSelectedDayData(dayTrimmed);
+    }
+    getSelectedWeekOptions(week) {
+        switch (week) {
+            case '1':
+                this.selectedWeekday = this.weekOneDays[0];
+                break;
+            case '2':
+                this.selectedWeekday = this.weekTwoDays[0];
+                break;
+            case '3':
+                this.selectedWeekday = this.weekThreeDays[0];
+                break;
+            case '4':
+                this.selectedWeekday = this.weekFourDays[0];
+                break;
+            case '5': this.selectedWeekday = this.weekFiveDays[0];
+            default:
+                '';
+                break;
+        }
+    }
+    getSelectedDayData(day) {
+        console.log(":: day is", day);
+        this.selectedDayData = this.dietplan.data.filter((data) => data.day === day);
+        console.log(":: selectedDay Data", this.selectedDayData);
     }
 };
+DietPlanComponent.ctorParameters = () => [
+    { type: src_app_checkout_service__WEBPACK_IMPORTED_MODULE_3__["CheckoutService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
 DietPlanComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-diet-plan',
@@ -887,7 +953,7 @@ HeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".meal-image {\n  background-image: url('drink.jpg');\n  background-position: center;\n  background-size: cover;\n  border-radius: 10px;\n  padding: 0px;\n  background-repeat: no-repeat;\n}\n\n.example-card{\n  max-width: 500px;\n  margin: 0 auto;\n  padding: 10px;\n  margin: 5px auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9tZWFsL21lYWwuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtDQUFrRDtFQUNsRCwyQkFBMkI7RUFDM0Isc0JBQXNCO0VBQ3RCLG1CQUFtQjtFQUNuQixZQUFZO0VBQ1osNEJBQTRCO0FBQzlCOztBQUVBO0VBQ0UsZ0JBQWdCO0VBQ2hCLGNBQWM7RUFDZCxhQUFhO0VBQ2IsZ0JBQWdCO0FBQ2xCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9tZWFsL21lYWwuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tZWFsLWltYWdlIHtcbiAgYmFja2dyb3VuZC1pbWFnZTogdXJsKC4vLi4vLi4vLi4vYXNzZXRzL2RyaW5rLmpwZyk7XG4gIGJhY2tncm91bmQtcG9zaXRpb246IGNlbnRlcjtcbiAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcbiAgYm9yZGVyLXJhZGl1czogMTBweDtcbiAgcGFkZGluZzogMHB4O1xuICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xufVxuXG4uZXhhbXBsZS1jYXJke1xuICBtYXgtd2lkdGg6IDUwMHB4O1xuICBtYXJnaW46IDAgYXV0bztcbiAgcGFkZGluZzogMTBweDtcbiAgbWFyZ2luOiA1cHggYXV0bztcbn0iXX0= */"
+module.exports = ".meal-image {\n  background-image: url('drink.jpg');\n  background-position: center;\n  background-size: cover;\n  border-radius: 10px;\n  padding: 0px;\n  background-repeat: no-repeat;\n}\n\n.example-card{\n  max-width: 500px;\n  margin: 0 auto;\n  padding: 10px;\n  margin: 5px auto;\n  cursor: pointer;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9tZWFsL21lYWwuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtDQUFrRDtFQUNsRCwyQkFBMkI7RUFDM0Isc0JBQXNCO0VBQ3RCLG1CQUFtQjtFQUNuQixZQUFZO0VBQ1osNEJBQTRCO0FBQzlCOztBQUVBO0VBQ0UsZ0JBQWdCO0VBQ2hCLGNBQWM7RUFDZCxhQUFhO0VBQ2IsZ0JBQWdCO0VBQ2hCLGVBQWU7QUFDakIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL21lYWwvbWVhbC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1lYWwtaW1hZ2Uge1xuICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoLi8uLi8uLi8uLi9hc3NldHMvZHJpbmsuanBnKTtcbiAgYmFja2dyb3VuZC1wb3NpdGlvbjogY2VudGVyO1xuICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xuICBib3JkZXItcmFkaXVzOiAxMHB4O1xuICBwYWRkaW5nOiAwcHg7XG4gIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XG59XG5cbi5leGFtcGxlLWNhcmR7XG4gIG1heC13aWR0aDogNTAwcHg7XG4gIG1hcmdpbjogMCBhdXRvO1xuICBwYWRkaW5nOiAxMHB4O1xuICBtYXJnaW46IDVweCBhdXRvO1xuICBjdXJzb3I6IHBvaW50ZXI7XG59Il19 */"
 
 /***/ }),
 
@@ -908,8 +974,12 @@ __webpack_require__.r(__webpack_exports__);
 let MealComponent = class MealComponent {
     constructor() { }
     ngOnInit() {
+        console.log(":: data", this.data);
     }
 };
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], MealComponent.prototype, "data", void 0);
 MealComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-meal',
@@ -957,14 +1027,18 @@ let MealsListComponent = class MealsListComponent {
         this.meals = [1, 2, 3, 4, 5, 6, 7];
     }
     ngOnInit() {
+        console.log(":: selectedData", this.selectedDayData);
     }
-    openDialog() {
-        this.dialog.open(_recipe_recipe_component__WEBPACK_IMPORTED_MODULE_3__["RecipeComponent"]);
+    openDialog(data) {
+        this.dialog.open(_recipe_recipe_component__WEBPACK_IMPORTED_MODULE_3__["RecipeComponent"], { data: data });
     }
 };
 MealsListComponent.ctorParameters = () => [
     { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"] }
 ];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], MealsListComponent.prototype, "selectedDayData", void 0);
 MealsListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-meals-list',
@@ -1085,7 +1159,7 @@ RecipeModalComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#recipe-section{\n    max-width: 600px;\n    min-width: 70vw;\n    max-height: 500px;\n    \n}\n\n.recipe-container{\n    padding: 0px;\n    margin: 0 auto;\n    text-align: center;\n}\n\n.recipe-image{\n    background-image: url('1.jpeg');\n    background-position: center;\n    background-size: cover;\n    display: -webkit-box;\n    display: flex;\n    padding: 0px;\n    height: 300px;\n}\n\n.overlay{\n    -webkit-box-align: center;\n            align-items: center;\n    width: 100%;\n    height: -webkit-fit-content;\n    height: -moz-fit-content;\n    height: fit-content;\n    position: absolute;\n    bottom: 0px;\n    background-color: rgba(0, 0, 0,0.5);\n    color: white;\n    padding-top: 10px;\n    padding-bottom: 10px;\n}\n\n.nutrition-buttons{\n    background-color: transparent;\n    border: 1px solid white;\n    color: white;\n    margin-left: 3px;\n    margin-right: 3px;\n    margin: 2px 3px;\n}\n\n.container{\n    padding: 0px;\n}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9yZWNpcGUvcmVjaXBlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxnQkFBZ0I7SUFDaEIsZUFBZTtJQUNmLGlCQUFpQjs7QUFFckI7O0FBRUE7SUFDSSxZQUFZO0lBQ1osY0FBYztJQUNkLGtCQUFrQjtBQUN0Qjs7QUFFQTtJQUNJLCtCQUFvRDtJQUNwRCwyQkFBMkI7SUFDM0Isc0JBQXNCO0lBQ3RCLG9CQUFhO0lBQWIsYUFBYTtJQUNiLFlBQVk7SUFDWixhQUFhO0FBQ2pCOztBQUVBO0lBQ0kseUJBQW1CO1lBQW5CLG1CQUFtQjtJQUNuQixXQUFXO0lBQ1gsMkJBQW1CO0lBQW5CLHdCQUFtQjtJQUFuQixtQkFBbUI7SUFDbkIsa0JBQWtCO0lBQ2xCLFdBQVc7SUFDWCxtQ0FBbUM7SUFDbkMsWUFBWTtJQUNaLGlCQUFpQjtJQUNqQixvQkFBb0I7QUFDeEI7O0FBRUE7SUFDSSw2QkFBNkI7SUFDN0IsdUJBQXVCO0lBQ3ZCLFlBQVk7SUFDWixnQkFBZ0I7SUFDaEIsaUJBQWlCO0lBQ2pCLGVBQWU7QUFDbkI7O0FBRUE7SUFDSSxZQUFZO0FBQ2hCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9yZWNpcGUvcmVjaXBlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjcmVjaXBlLXNlY3Rpb257XG4gICAgbWF4LXdpZHRoOiA2MDBweDtcbiAgICBtaW4td2lkdGg6IDcwdnc7XG4gICAgbWF4LWhlaWdodDogNTAwcHg7XG4gICAgXG59XG5cbi5yZWNpcGUtY29udGFpbmVye1xuICAgIHBhZGRpbmc6IDBweDtcbiAgICBtYXJnaW46IDAgYXV0bztcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbi5yZWNpcGUtaW1hZ2V7XG4gICAgYmFja2dyb3VuZC1pbWFnZTogdXJsKC4uLy4uLy4uL2Fzc2V0cy9yZWNpcGUvMS5qcGVnKTtcbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXI7XG4gICAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIHBhZGRpbmc6IDBweDtcbiAgICBoZWlnaHQ6IDMwMHB4O1xufVxuXG4ub3ZlcmxheXtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGhlaWdodDogZml0LWNvbnRlbnQ7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIGJvdHRvbTogMHB4O1xuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwgMCwgMCwwLjUpO1xuICAgIGNvbG9yOiB3aGl0ZTtcbiAgICBwYWRkaW5nLXRvcDogMTBweDtcbiAgICBwYWRkaW5nLWJvdHRvbTogMTBweDtcbn1cblxuLm51dHJpdGlvbi1idXR0b25ze1xuICAgIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIHdoaXRlO1xuICAgIGNvbG9yOiB3aGl0ZTtcbiAgICBtYXJnaW4tbGVmdDogM3B4O1xuICAgIG1hcmdpbi1yaWdodDogM3B4O1xuICAgIG1hcmdpbjogMnB4IDNweDtcbn1cblxuLmNvbnRhaW5lcntcbiAgICBwYWRkaW5nOiAwcHg7XG59XG5cbiJdfQ== */"
+module.exports = "#recipe-section{\n    max-width: 600px;\n    min-width: 70vw;\n    max-height: 500px;\n    \n}\n\n.recipe-container{\n    padding: 0px;\n    margin: 0 auto;\n    text-align: center;\n}\n\n.left {\n    text-align: left;\n}\n\n.main-tab-ing {\n    margin: 10px;\n}\n\n.recipe-image{\n    background-image: url('1.jpeg');\n    background-position: center;\n    background-size: cover;\n    display: -webkit-box;\n    display: flex;\n    padding: 0px;\n    height: 300px;\n}\n\n.overlay{\n    -webkit-box-align: center;\n            align-items: center;\n    width: 100%;\n    height: -webkit-fit-content;\n    height: -moz-fit-content;\n    height: fit-content;\n    position: absolute;\n    bottom: 0px;\n    background-color: rgba(0, 0, 0,0.5);\n    color: white;\n    padding-top: 10px;\n    padding-bottom: 10px;\n}\n\n.nutrition-buttons{\n    background-color: transparent;\n    border: 1px solid white;\n    color: white;\n    margin-left: 3px;\n    margin-right: 3px;\n    margin: 2px 3px;\n}\n\n.container{\n    padding: 0px;\n}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9yZWNpcGUvcmVjaXBlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxnQkFBZ0I7SUFDaEIsZUFBZTtJQUNmLGlCQUFpQjs7QUFFckI7O0FBRUE7SUFDSSxZQUFZO0lBQ1osY0FBYztJQUNkLGtCQUFrQjtBQUN0Qjs7QUFDQTtJQUNJLGdCQUFnQjtBQUNwQjs7QUFFQTtJQUNJLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSwrQkFBb0Q7SUFDcEQsMkJBQTJCO0lBQzNCLHNCQUFzQjtJQUN0QixvQkFBYTtJQUFiLGFBQWE7SUFDYixZQUFZO0lBQ1osYUFBYTtBQUNqQjs7QUFFQTtJQUNJLHlCQUFtQjtZQUFuQixtQkFBbUI7SUFDbkIsV0FBVztJQUNYLDJCQUFtQjtJQUFuQix3QkFBbUI7SUFBbkIsbUJBQW1CO0lBQ25CLGtCQUFrQjtJQUNsQixXQUFXO0lBQ1gsbUNBQW1DO0lBQ25DLFlBQVk7SUFDWixpQkFBaUI7SUFDakIsb0JBQW9CO0FBQ3hCOztBQUVBO0lBQ0ksNkJBQTZCO0lBQzdCLHVCQUF1QjtJQUN2QixZQUFZO0lBQ1osZ0JBQWdCO0lBQ2hCLGlCQUFpQjtJQUNqQixlQUFlO0FBQ25COztBQUVBO0lBQ0ksWUFBWTtBQUNoQiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcmVjaXBlL3JlY2lwZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI3JlY2lwZS1zZWN0aW9ue1xuICAgIG1heC13aWR0aDogNjAwcHg7XG4gICAgbWluLXdpZHRoOiA3MHZ3O1xuICAgIG1heC1oZWlnaHQ6IDUwMHB4O1xuICAgIFxufVxuXG4ucmVjaXBlLWNvbnRhaW5lcntcbiAgICBwYWRkaW5nOiAwcHg7XG4gICAgbWFyZ2luOiAwIGF1dG87XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuLmxlZnQge1xuICAgIHRleHQtYWxpZ246IGxlZnQ7XG59XG5cbi5tYWluLXRhYi1pbmcge1xuICAgIG1hcmdpbjogMTBweDtcbn1cblxuLnJlY2lwZS1pbWFnZXtcbiAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoLi4vLi4vLi4vYXNzZXRzL3JlY2lwZS8xLmpwZWcpO1xuICAgIGJhY2tncm91bmQtcG9zaXRpb246IGNlbnRlcjtcbiAgICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgcGFkZGluZzogMHB4O1xuICAgIGhlaWdodDogMzAwcHg7XG59XG5cbi5vdmVybGF5e1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiBmaXQtY29udGVudDtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgYm90dG9tOiAwcHg7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgwLCAwLCAwLDAuNSk7XG4gICAgY29sb3I6IHdoaXRlO1xuICAgIHBhZGRpbmctdG9wOiAxMHB4O1xuICAgIHBhZGRpbmctYm90dG9tOiAxMHB4O1xufVxuXG4ubnV0cml0aW9uLWJ1dHRvbnN7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gICAgYm9yZGVyOiAxcHggc29saWQgd2hpdGU7XG4gICAgY29sb3I6IHdoaXRlO1xuICAgIG1hcmdpbi1sZWZ0OiAzcHg7XG4gICAgbWFyZ2luLXJpZ2h0OiAzcHg7XG4gICAgbWFyZ2luOiAycHggM3B4O1xufVxuXG4uY29udGFpbmVye1xuICAgIHBhZGRpbmc6IDBweDtcbn1cblxuIl19 */"
 
 /***/ }),
 
@@ -1101,21 +1175,55 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RecipeComponent", function() { return RecipeComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+
 
 
 let RecipeComponent = class RecipeComponent {
-    constructor() {
+    constructor(dialogRef, data) {
+        this.dialogRef = dialogRef;
+        this.data = data;
+        this.totalCarbs = 0;
+        this.totalProtein = 0;
+        this.totalCal = 0;
+        this.totalFat = 0;
+        this.recipeData = this.data.meal.data;
+        console.log(":: recipe data", this.data.meal.name);
+        this.mealName = this.data.meal.name;
     }
     ngOnInit() {
-        console.log(":: paddig value");
+        console.log(":: recipe data", this.recipeData);
+        this.getNutrients(this.recipeData);
+    }
+    getNutrients(recipeArray) {
+        this.totalProtein = 0;
+        this.totalCal = 0;
+        this.totalFat = 0;
+        this.totalCarbs = 0;
+        recipeArray.forEach((recipe) => {
+            console.log(":: recipe", recipe);
+            this.totalCarbs += recipe.recipe.carbs ? parseFloat(recipe.recipe.carbs) : 0;
+            this.totalCal += recipe.recipe.cal ? parseFloat(recipe.recipe.cal) : 0;
+            this.totalProtein += recipe.recipe.protein ? parseFloat(recipe.recipe.protein) : 0;
+            this.totalFat += recipe.recipe.fat ? parseFloat(recipe.recipe.fat) : 0;
+        });
+        console.log(":: carbs", this.totalCarbs);
+        console.log(":: protein", this.totalProtein);
+        console.log(":: fat", this.totalFat);
+        console.log(":: cal", this.totalCal);
     }
 };
+RecipeComponent.ctorParameters = () => [
+    { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
+    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+];
 RecipeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-recipe',
         template: __webpack_require__(/*! raw-loader!./recipe.component.html */ "./node_modules/raw-loader/index.js!./src/app/components/recipe/recipe.component.html"),
         styles: [__webpack_require__(/*! ./recipe.component.css */ "./src/app/components/recipe/recipe.component.css")]
-    })
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
 ], RecipeComponent);
 
 
@@ -1156,19 +1264,19 @@ let FoodpreferenceComponent = class FoodpreferenceComponent {
         this.prev = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"];
     }
     ngOnInit() {
-        if (this.service.slideData.food_pref == "vegetarian") {
+        if (this.service.slideData.food_pref == "veg") {
             this.foodpref = this.service.slideData.food_pref;
             this.veg = true;
             this.nonveg = false;
             this.egg = false;
         }
-        if (this.service.slideData.food_pref == "non_vegetarian") {
+        if (this.service.slideData.food_pref == "non_veg") {
             this.foodpref = this.service.slideData.food_pref;
             this.veg = false;
             this.nonveg = true;
             this.egg = false;
         }
-        if (this.service.slideData.food_pref == "eggetarian") {
+        if (this.service.slideData.food_pref == "egg") {
             this.foodpref = this.service.slideData.food_pref;
             this.veg = false;
             this.nonveg = false;
@@ -1178,7 +1286,7 @@ let FoodpreferenceComponent = class FoodpreferenceComponent {
     }
     handleveg() {
         console.log(":: veg clicked");
-        this.foodpref = "vegetarian";
+        this.foodpref = "veg";
         this.veg = true;
         this.nonveg = false;
         this.egg = false;
@@ -1191,7 +1299,7 @@ let FoodpreferenceComponent = class FoodpreferenceComponent {
     }
     handlenonveg() {
         console.log(":: nonveg clicked");
-        this.foodpref = "non_vegetarian";
+        this.foodpref = "non_veg";
         this.veg = false;
         this.nonveg = true;
         this.egg = false;
@@ -1204,7 +1312,7 @@ let FoodpreferenceComponent = class FoodpreferenceComponent {
     }
     handleegg() {
         console.log(":: egg clicked");
-        this.foodpref = "eggetarian";
+        this.foodpref = "egg";
         this.veg = false;
         this.nonveg = false;
         this.egg = true;
@@ -1282,7 +1390,7 @@ let GoalComponent = class GoalComponent {
     }
     handleweightgain() {
         console.log(":: weight gain selected");
-        this.goal = "weightgain";
+        this.goal = "weight_gain";
         this.service.updateGoal(this.goal);
         // changing slide
         setTimeout(() => {
@@ -1291,18 +1399,15 @@ let GoalComponent = class GoalComponent {
         }, 500);
     }
     handleweightloss() {
-        console.log(":: weight loss selected");
-        this.goal = "weightloss";
+        this.goal = "weight_loss";
         this.service.updateGoal(this.goal);
         // changing slide
         setTimeout(() => {
             this.next.emit();
-            console.log(":: emitted from child");
         }, 500);
     }
     handlemusclebuilding() {
-        console.log(":: musclebuuilding selected");
-        this.goal = "musclebuilding";
+        this.goal = "muscle_building";
         this.service.updateGoal(this.goal);
         // changing slide
         setTimeout(() => {
@@ -1778,7 +1883,8 @@ let TrueComponent = class TrueComponent {
             this.service.updateTrue(trueStatement);
             this.CheckoutService.getPersonalizedDietPrice().subscribe((amount) => {
                 console.log(":: pricing for plan", amount);
-                this.CheckoutService.setPricing(amount);
+                const actualAmount = 100 * amount;
+                this.CheckoutService.setPricing(actualAmount);
                 this.router.navigate(['profile-summary']);
             });
         }
@@ -2245,14 +2351,14 @@ let CheckoutComponent = class CheckoutComponent {
                 this.checkoutService.capturePayment(Object.assign({}, response, { amount: this.price, rzp_order_id: rzp_order_id })).subscribe((res) => {
                     console.log(':: captured payment successfuly', res);
                     if (res.error_code == null) {
-                        this.windowService.window.location.href = "/payment-success";
+                        this.windowService.window.location.href = "/login";
                     }
                     else {
                         this.windowService.window.location.href = "/payment-failed";
                     }
                     // this.windowService.window.location.href="/payment-success";
                 }, (err) => {
-                    console.error(':: Err - ', err);
+                    this.router.navigate[('payment-failed')];
                     //this.windowService.window.location.href="/payment-failed";
                 });
             });
@@ -2269,7 +2375,7 @@ let CheckoutComponent = class CheckoutComponent {
                 var rzp = new this.windowService.window.Razorpay(razorPayOptions);
                 rzp.open();
             }, (err) => {
-                console.error(':: Err - ', err);
+                this.router.navigate[('payment-failed')];
             });
         }
     }
@@ -2347,7 +2453,7 @@ ContactUsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".mat-form-field{\n    display: block;\n}\n\n\n.payment-span{\n      text-align: center;\n  }\n\n\n.button-container{\n    position: fixed;\n    bottom: 0px;\n    left: 0px;\n    padding: 0px;\n    margin: 0px;\n    width: 100vw;\n    z-index: 1000;\n}\n\n\n.button-row{\n    margin: 0px;\n    padding: 0px;\n    width: 100vw;\n}\n\n\n.button-box{\n    padding: 0px;\n    margin: 0px;\n}\n\n\n.grey-button{\n      background-color: grey;\n      color: white;\n      height: 50px;\n      border: 0px;\n  }\n\n\n.button-container{\n    text-align: center;\n}\n\n\n.payment-container img{\n    height: 30px;\n    margin: 0 auto;\n    padding-left:10px;\n    height: 50px;\n    border: 0px;\n}\n\n\n.block-button{\n    width: 100%;\n    height: 50px;\n    border: 0px;\n}\n\n\n.checked{\n    border: 1px solid black;\n}\n\n\n@media only screen and (min-width: 800px){\n    .heading{\n        margin-top: 100px;\n    }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGNBQWM7QUFDbEI7OztBQUdBO01BQ00sa0JBQWtCO0VBQ3RCOzs7QUFFRjtJQUNJLGVBQWU7SUFDZixXQUFXO0lBQ1gsU0FBUztJQUNULFlBQVk7SUFDWixXQUFXO0lBQ1gsWUFBWTtJQUNaLGFBQWE7QUFDakI7OztBQUdBO0lBQ0ksV0FBVztJQUNYLFlBQVk7SUFDWixZQUFZO0FBQ2hCOzs7QUFFQTtJQUNJLFlBQVk7SUFDWixXQUFXO0FBQ2Y7OztBQUVBO01BQ00sc0JBQXNCO01BQ3RCLFlBQVk7TUFDWixZQUFZO01BQ1osV0FBVztFQUNmOzs7QUFFRjtJQUNJLGtCQUFrQjtBQUN0Qjs7O0FBRUE7SUFDSSxZQUFZO0lBQ1osY0FBYztJQUNkLGlCQUFpQjtJQUNqQixZQUFZO0lBQ1osV0FBVztBQUNmOzs7QUFJQTtJQUNJLFdBQVc7SUFDWCxZQUFZO0lBQ1osV0FBVztBQUNmOzs7QUFFQTtJQUNJLHVCQUF1QjtBQUMzQjs7O0FBRUE7SUFDSTtRQUNJLGlCQUFpQjtJQUNyQjtBQUNKIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYXQtZm9ybS1maWVsZHtcbiAgICBkaXNwbGF5OiBibG9jaztcbn1cblxuXG4ucGF5bWVudC1zcGFue1xuICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICB9XG5cbi5idXR0b24tY29udGFpbmVye1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICBib3R0b206IDBweDtcbiAgICBsZWZ0OiAwcHg7XG4gICAgcGFkZGluZzogMHB4O1xuICAgIG1hcmdpbjogMHB4O1xuICAgIHdpZHRoOiAxMDB2dztcbiAgICB6LWluZGV4OiAxMDAwO1xufVxuXG5cbi5idXR0b24tcm93e1xuICAgIG1hcmdpbjogMHB4O1xuICAgIHBhZGRpbmc6IDBweDtcbiAgICB3aWR0aDogMTAwdnc7XG59XG5cbi5idXR0b24tYm94e1xuICAgIHBhZGRpbmc6IDBweDtcbiAgICBtYXJnaW46IDBweDtcbn1cblxuLmdyZXktYnV0dG9ue1xuICAgICAgYmFja2dyb3VuZC1jb2xvcjogZ3JleTtcbiAgICAgIGNvbG9yOiB3aGl0ZTtcbiAgICAgIGhlaWdodDogNTBweDtcbiAgICAgIGJvcmRlcjogMHB4O1xuICB9XG5cbi5idXR0b24tY29udGFpbmVye1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuLnBheW1lbnQtY29udGFpbmVyIGltZ3tcbiAgICBoZWlnaHQ6IDMwcHg7XG4gICAgbWFyZ2luOiAwIGF1dG87XG4gICAgcGFkZGluZy1sZWZ0OjEwcHg7XG4gICAgaGVpZ2h0OiA1MHB4O1xuICAgIGJvcmRlcjogMHB4O1xufVxuXG5cblxuLmJsb2NrLWJ1dHRvbntcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IDUwcHg7XG4gICAgYm9yZGVyOiAwcHg7XG59XG5cbi5jaGVja2Vke1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrO1xufVxuXG5AbWVkaWEgb25seSBzY3JlZW4gYW5kIChtaW4td2lkdGg6IDgwMHB4KXtcbiAgICAuaGVhZGluZ3tcbiAgICAgICAgbWFyZ2luLXRvcDogMTAwcHg7XG4gICAgfVxufSJdfQ== */"
+module.exports = ".mat-form-field{\n    display: block;\n}\n\n\n.payment-span{\n      text-align: center;\n  }\n\n\n.button-container{\n    position: fixed;\n    bottom: 0px;\n    left: 0px;\n    padding: 0px;\n    margin: 0px;\n    width: 100vw;\n    z-index: 1000;\n}\n\n\n.error {\n    color: red;\n}\n\n\n.button-row{\n    margin: 0px;\n    padding: 0px;\n    width: 100vw;\n}\n\n\n.button-box{\n    padding: 0px;\n    margin: 0px;\n}\n\n\n.grey-button{\n      background-color: grey;\n      color: white;\n      height: 50px;\n      border: 0px;\n  }\n\n\n.button-container{\n    text-align: center;\n}\n\n\n.payment-container img{\n    height: 30px;\n    margin: 0 auto;\n    padding-left:10px;\n    height: 50px;\n    border: 0px;\n}\n\n\n.block-button{\n    width: 100%;\n    height: 50px;\n    border: 0px;\n}\n\n\n.checked{\n    border: 1px solid black;\n}\n\n\n@media only screen and (min-width: 800px){\n    .heading{\n        margin-top: 100px;\n    }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGNBQWM7QUFDbEI7OztBQUdBO01BQ00sa0JBQWtCO0VBQ3RCOzs7QUFFRjtJQUNJLGVBQWU7SUFDZixXQUFXO0lBQ1gsU0FBUztJQUNULFlBQVk7SUFDWixXQUFXO0lBQ1gsWUFBWTtJQUNaLGFBQWE7QUFDakI7OztBQUVBO0lBQ0ksVUFBVTtBQUNkOzs7QUFFQTtJQUNJLFdBQVc7SUFDWCxZQUFZO0lBQ1osWUFBWTtBQUNoQjs7O0FBRUE7SUFDSSxZQUFZO0lBQ1osV0FBVztBQUNmOzs7QUFFQTtNQUNNLHNCQUFzQjtNQUN0QixZQUFZO01BQ1osWUFBWTtNQUNaLFdBQVc7RUFDZjs7O0FBRUY7SUFDSSxrQkFBa0I7QUFDdEI7OztBQUVBO0lBQ0ksWUFBWTtJQUNaLGNBQWM7SUFDZCxpQkFBaUI7SUFDakIsWUFBWTtJQUNaLFdBQVc7QUFDZjs7O0FBSUE7SUFDSSxXQUFXO0lBQ1gsWUFBWTtJQUNaLFdBQVc7QUFDZjs7O0FBRUE7SUFDSSx1QkFBdUI7QUFDM0I7OztBQUVBO0lBQ0k7UUFDSSxpQkFBaUI7SUFDckI7QUFDSiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2xvZ2luL2xvZ2luLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubWF0LWZvcm0tZmllbGR7XG4gICAgZGlzcGxheTogYmxvY2s7XG59XG5cblxuLnBheW1lbnQtc3BhbntcbiAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgfVxuXG4uYnV0dG9uLWNvbnRhaW5lcntcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgYm90dG9tOiAwcHg7XG4gICAgbGVmdDogMHB4O1xuICAgIHBhZGRpbmc6IDBweDtcbiAgICBtYXJnaW46IDBweDtcbiAgICB3aWR0aDogMTAwdnc7XG4gICAgei1pbmRleDogMTAwMDtcbn1cblxuLmVycm9yIHtcbiAgICBjb2xvcjogcmVkO1xufVxuXG4uYnV0dG9uLXJvd3tcbiAgICBtYXJnaW46IDBweDtcbiAgICBwYWRkaW5nOiAwcHg7XG4gICAgd2lkdGg6IDEwMHZ3O1xufVxuXG4uYnV0dG9uLWJveHtcbiAgICBwYWRkaW5nOiAwcHg7XG4gICAgbWFyZ2luOiAwcHg7XG59XG5cbi5ncmV5LWJ1dHRvbntcbiAgICAgIGJhY2tncm91bmQtY29sb3I6IGdyZXk7XG4gICAgICBjb2xvcjogd2hpdGU7XG4gICAgICBoZWlnaHQ6IDUwcHg7XG4gICAgICBib3JkZXI6IDBweDtcbiAgfVxuXG4uYnV0dG9uLWNvbnRhaW5lcntcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbi5wYXltZW50LWNvbnRhaW5lciBpbWd7XG4gICAgaGVpZ2h0OiAzMHB4O1xuICAgIG1hcmdpbjogMCBhdXRvO1xuICAgIHBhZGRpbmctbGVmdDoxMHB4O1xuICAgIGhlaWdodDogNTBweDtcbiAgICBib3JkZXI6IDBweDtcbn1cblxuXG5cbi5ibG9jay1idXR0b257XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiA1MHB4O1xuICAgIGJvcmRlcjogMHB4O1xufVxuXG4uY2hlY2tlZHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcbn1cblxuQG1lZGlhIG9ubHkgc2NyZWVuIGFuZCAobWluLXdpZHRoOiA4MDBweCl7XG4gICAgLmhlYWRpbmd7XG4gICAgICAgIG1hcmdpbi10b3A6IDEwMHB4O1xuICAgIH1cbn0iXX0= */"
 
 /***/ }),
 
@@ -2365,25 +2471,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var src_app_checkout_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/checkout.service */ "./src/app/checkout.service.ts");
+
 
 
 
 
 let LoginComponent = class LoginComponent {
-    constructor(fb, router) {
+    constructor(fb, router, service) {
         this.fb = fb;
         this.router = router;
+        this.service = service;
         this.loginForm = this.fb.group({
             email: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
         });
-        console.log(":: login loaded");
     }
     ngOnInit() {
+        this.apiError = false;
     }
-    login() {
-        console.log(":: login");
+    login(email) {
+        console.log(":: login", email);
         if (this.loginForm.valid) {
-            this.router.navigateByUrl('/diet-plan');
+            this.service.getDietPlanFromServer(email).subscribe((res) => {
+                if (res) {
+                    this.service.setDietPlan(res);
+                    this.router.navigateByUrl('/diet-plan');
+                }
+                else {
+                    this.apiError = true;
+                }
+            });
         }
     }
     handleCancel() {
@@ -2393,7 +2510,8 @@ let LoginComponent = class LoginComponent {
 };
 LoginComponent.ctorParameters = () => [
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: src_app_checkout_service__WEBPACK_IMPORTED_MODULE_4__["CheckoutService"] }
 ];
 LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -2806,6 +2924,7 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 const environment = {
+    API_URL: `http://localhost:3000/backend/`,
     production: false,
     razorpay: {
         key: 'rzp_test_d8qs8mxXhWH9vS',
