@@ -316,7 +316,7 @@ module.exports = "<!-- <section id=\"personalized-diet\">\n    <div class=\"cont
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-announcement></app-announcement>\n<app-navbar></app-navbar>\n<section class=\"profile-section\">\n<div class=\"container heading-section\">\n\n    <h2 class=\"orange\">Your Profile Summary</h2>\n    <p class=\"orange\">Your Body Dimensions</p>\n    <div class=\"row\">\n        <div class=\"col \">\n            <p class=\"bold\">{{userAge}}</p>\n            <p>Years</p>\n        </div>\n        <div class=\"col \">\n            <p class=\"bold\">{{userHeightM|number:'.2-2'}}</p>\n            <p>Meter</p>\n        </div>\n        <div class=\"col \">\n            <p class=\"bold\">{{userWeightKg|number:'.0-0'}}</p>\n            <p>Kg</p>\n        </div>\n    </div>\n    <h5 *ngIf=\"BMI>=25&&BMI<30\">Checkout! You are in overweight category</h5>\n    <h5 *ngIf=\"BMI<18.5\">Checkout! you are in UnderWeight Category</h5>\n    <h5 *ngIf=\"BMI>=18.5&&BMI<25\">You are in Normal Category</h5>\n    <h5 *ngIf=\"BMI>=30\">Checkout! you are in Obese Category</h5>\n    <p class=\"purple\">Current BMI: {{BMI | number:'2.2-2'}}</p>\n    <!-- lottie Animation -->\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-md\">\n                <div class=\"bmi-guage\">\n                    <ngx-charts-gauge\n                        [view]=\"view\"\n                        [scheme]=\"colorScheme\"\n                        [results] = \"single\"\n                        [legend]=\"legend\"\n                        [customColors]=\"customColors\"\n                        [legendPosition]=\"legendPosition\"\n                        (select)=\"onSelect($event)\"\n                        (activate)=\"onActivate($event)\"\n                        (deactivate)=\"onDeactivate($event)\"\n                        [max] = \"40\"\n                        [angleSpan] = \"180\"\n                        [startAngle] = \"270\"\n                        showText = \"true\"\n                        [showAxis] = \"false\"\n                        >\n                    </ngx-charts-gauge>\n                </div>\n\n            </div>\n        </div>\n    </div>\n\n\n\n    <p class=\"comitted\">By the way, you need to <span *ngIf = \"(idealWeight-userWeightKg)<0\">loose</span> <span *ngIf = \"(idealWeight-userWeightKg)>0\">gain</span> <span class=\"ideal-weight-kg\"> {{idealWeight-userWeightKg|number:'.2-2'}} kgs</span> more to reach your avearge weight, which is acheivable, <br> if we both are comitted to it </p>\n    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint accusamus quis saepe praesentium aliquam quibusdam sequi, voluptatum, aspernatur velit, incidunt sapiente laudantium quaerat. Inventore explicabo error sequi delectus ipsa provident.</p>\n    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam neque nostrum saepe, maxime suscipit amet sapiente eos, beatae praesentium corporis quo quisquam, porro libero dolorum ab alias necessitatibus quia voluptate.</p>\n</div>\n<div class=\"ideal-body-div\">\n    <div class=\"ideal-body-weight\">\n        <h4>Based on Your Answers, your ideal body weight is {{idealWeight|number:'.2-2'}} kg</h4>\n    </div>\n</div>\n<div class=\"calorie-div\">\n    <div class=\"calorie-count orange\">\n        <h5>Calorie Count</h5>\n        <!-----------calorie count animation------->\n        <div class=\"bmi-guage\">\n            <ngx-charts-gauge\n                        [view]=\"view\"\n                        [scheme]=\"colorSchemeCalorie\"\n                        [results] = \"singleCalorie\"\n                        [legend]=\"legend\"\n                        [legendPosition]=\"legendPosition\"\n                        (select)=\"onSelect($event)\"\n                        (activate)=\"onActiva7e($event)\"\n                        (deactivate)=\"onDeactivate($event)\"\n                        [max] = \"5000\"\n                        [angleSpan] = \"360\"\n                        [startAngle] = \"270\"\n                        showText = \"false\"\n                        [showAxis] = \"false\"\n                        >\n                    </ngx-charts-gauge>\n        </div>\n    </div>\n</div>\n\n    <div class=\"water-intake orange\">\n        <h5>Daily Water Intake</h5>\n        <img src=\"./../../../assets/h20.png\" alt=\"\">\n        <p>{{0.035*userWeightKg|number:'.2-2'}} Litre</p>\n    </div>\n    <div class=\"metabolic-age orange\">\n        <h5>Metabolic Age</h5>\n        <img src=\"{{ gender=='male'? '../../../../../../assets/profile-summary/guy.svg' : '../../../../../../assets/profile-summary/gal.svg'}}\" alt=\"\">\n        <p>32 years</p>\n    </div>\n    <div class=\"kit\">\n        <h4>get your Personalized Weight loss Kit</h4>\n        <div class=\"container\">\n            <div class=\"row\">\n                <div class=\"col img-col\">\n                    <img src=\"./../../../assets/profile-summary/personalized meal plan.svg\" alt=\"\">\n                    <p>Personaized Meal Plan</p>\n                </div>\n                <div class=\"col img-col\">\n                    <img src=\"./../../../assets/profile-summary/detailed instructions.svg\" alt=\"\">\n                    <p>Detailed Instructions</p>\n                </div>\n                <div class=\"col img-col\">\n                    <img src=\"./../../../assets/profile-summary/metabolism boosting exercise.svg\" alt=\"\">\n                    <p>Metabloism Boosting Exercises</p>\n                </div>\n        </div>\n        </div>\n    </div>\n        <div class=\"bottom-container\">\n            <div class=\"col-md price-div\"><span class=\"strike\">1299</span><span class=\"price\">{{pricing}}</span></div>\n            <div class=\"col-md button-div\" (click)=\"handleCheckout()\">\n                <button class=\"block-button\">CHECKOUT</button>\n            </div>\n        </div>\n\n</section>\n\n"
+module.exports = "<app-announcement></app-announcement>\n<app-navbar></app-navbar>\n<section class=\"profile-section\">\n<div class=\"container heading-section\">\n\n    <h2 class=\"orange\">Your Profile Summary</h2>\n    <p class=\"orange\">Your Body Dimensions</p>\n    <div class=\"row\">\n        <div class=\"col \">\n            <p class=\"bold\">{{userAge}}</p>\n            <p>Years</p>\n        </div>\n        <div class=\"col \">\n            <p class=\"bold\">{{userHeightM|number:'.2-2'}}</p>\n            <p>Meter</p>\n        </div>\n        <div class=\"col \">\n            <p class=\"bold\">{{userWeightKg|number:'.0-0'}}</p>\n            <p>Kg</p>\n        </div>\n    </div>\n    <h5 *ngIf=\"BMI>=25&&BMI<30\">Checkout! You are in overweight category</h5>\n    <h5 *ngIf=\"BMI<18.5\">Checkout! you are in UnderWeight Category</h5>\n    <h5 *ngIf=\"BMI>=18.5&&BMI<25\">You are in Normal Category</h5>\n    <h5 *ngIf=\"BMI>=30\">Checkout! you are in Obese Category</h5>\n    <p class=\"purple\">Current BMI: {{BMI | number:'2.2-2'}}</p>\n    <!-- lottie Animation -->\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-md\">\n                <div class=\"bmi-guage\">\n                    <ngx-charts-gauge\n                        [view]=\"view\"\n                        [scheme]=\"colorScheme\"\n                        [results] = \"single\"\n                        [legend]=\"legend\"\n                        [customColors]=\"customColors\"\n                        [legendPosition]=\"legendPosition\"\n                        (select)=\"onSelect($event)\"\n                        (activate)=\"onActivate($event)\"\n                        (deactivate)=\"onDeactivate($event)\"\n                        [max] = \"40\"\n                        [angleSpan] = \"180\"\n                        [startAngle] = \"270\"\n                        showText = \"true\"\n                        [showAxis] = \"false\"\n                        >\n                    </ngx-charts-gauge>\n                </div>\n\n            </div>\n        </div>\n    </div>\n\n\n\n    <p class=\"comitted\">By the way, you need to <span *ngIf = \"(idealWeight-userWeightKg)<0\">loose</span> <span *ngIf = \"(idealWeight-userWeightKg)>0\">gain</span> <span class=\"ideal-weight-kg\"> {{idealWeight-userWeightKg|number:'.2-2'}} kgs</span> more to reach your avearge weight, which is acheivable, <br> if we both are comitted to it </p>\n    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint accusamus quis saepe praesentium aliquam quibusdam sequi, voluptatum, aspernatur velit, incidunt sapiente laudantium quaerat. Inventore explicabo error sequi delectus ipsa provident.</p>\n    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam neque nostrum saepe, maxime suscipit amet sapiente eos, beatae praesentium corporis quo quisquam, porro libero dolorum ab alias necessitatibus quia voluptate.</p>\n</div>\n<div class=\"ideal-body-div\">\n    <div class=\"ideal-body-weight\">\n        <h4>Based on Your Answers, your ideal body weight is {{idealWeight|number:'.2-2'}} kg</h4>\n    </div>\n</div>\n<div class=\"calorie-div\">\n    <div class=\"calorie-count orange\">\n        <h5>Calorie Count</h5>\n        <!-----------calorie count animation------->\n        <div class=\"bmi-guage\">\n            <ngx-charts-gauge\n                        [view]=\"view\"\n                        [scheme]=\"colorSchemeCalorie\"\n                        [results] = \"singleCalorie\"\n                        [legend]=\"legend\"\n                        [legendPosition]=\"legendPosition\"\n                        (select)=\"onSelect($event)\"\n                        (activate)=\"onActiva7e($event)\"\n                        (deactivate)=\"onDeactivate($event)\"\n                        [max] = \"5000\"\n                        [angleSpan] = \"360\"\n                        [startAngle] = \"270\"\n                        showText = \"false\"\n                        [showAxis] = \"false\"\n                        >\n                    </ngx-charts-gauge>\n        </div>\n    </div>\n</div>\n\n    <div class=\"water-intake orange\">\n        <h5>Daily Water Intake</h5>\n        <img src=\"./../../../assets/h20.png\" alt=\"\">\n        <p>{{0.035*userWeightKg|number:'.2-2'}} Litre</p>\n    </div>\n    <div class=\"metabolic-age orange\">\n        <h5>Metabolic Age</h5>\n        <img src=\"{{ gender=='male'? '../../../../../../assets/profile-summary/guy.svg' : '../../../../../../assets/profile-summary/gal.svg'}}\" alt=\"\">\n        <p>32 years</p>\n    </div>\n    <div class=\"kit\">\n        <h4>get your Personalized Weight loss Kit</h4>\n        <div class=\"container\">\n            <div class=\"row\">\n                <div class=\"col img-col\">\n                    <img src=\"./../../../assets/profile-summary/personalized meal plan.svg\" alt=\"\">\n                    <p>Personaized Meal Plan</p>\n                </div>\n                <div class=\"col img-col\">\n                    <img src=\"./../../../assets/profile-summary/detailed instructions.svg\" alt=\"\">\n                    <p>Detailed Instructions</p>\n                </div>\n                <div class=\"col img-col\">\n                    <img src=\"./../../../assets/profile-summary/metabolism boosting exercise.svg\" alt=\"\">\n                    <p>Metabloism Boosting Exercises</p>\n                </div>\n        </div>\n        </div>\n    </div>\n        <div class=\"bottom-container\">\n            <div class=\"col-md price-div\"><span class=\"strike\">1299</span><span class=\"price\">{{pricing/100}}</span></div>\n            <div class=\"col-md button-div\" (click)=\"handleCheckout()\">\n                <button class=\"block-button\">CHECKOUT</button>\n            </div>\n        </div>\n\n</section>\n\n"
 
 /***/ }),
 
@@ -629,7 +629,7 @@ var CheckoutService = /** @class */ (function () {
         }));
     };
     CheckoutService.prototype.getDietPlanFromServer = function (email) {
-        return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].API_URL + "/get-dietplan?email=" + email);
+        return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].API_URL + "/get-dietplan?email=" + email, { headers: this.headers });
     };
     CheckoutService.prototype.getPersonalizedDietPrice = function () {
         // const url = 'http://95.111.199.28/plans/pricing';
@@ -638,7 +638,7 @@ var CheckoutService = /** @class */ (function () {
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.amount; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(function (err) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["throwError"])(err); }));
     };
     CheckoutService.prototype.capturePayment = function (details) {
-        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].API_URL + "capture-payment", details).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(function (err) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["throwError"])(err); }));
+        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].API_URL + "capture-payment", details, { headers: this.headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(function (err) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["throwError"])(err); }));
     };
     CheckoutService.prototype.setPricing = function (price) {
         this.pricing = price;
@@ -2345,11 +2345,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var CheckoutComponent = /** @class */ (function () {
-    function CheckoutComponent(fb, slideService, router, checkoutService, windowService, route, CustomSlideService) {
+    function CheckoutComponent(fb, slideService, router, checkoutService, zone, windowService, route, CustomSlideService) {
         this.fb = fb;
         this.slideService = slideService;
         this.router = router;
         this.checkoutService = checkoutService;
+        this.zone = zone;
         this.windowService = windowService;
         this.route = route;
         this.CustomSlideService = CustomSlideService;
@@ -2404,23 +2405,7 @@ var CheckoutComponent = /** @class */ (function () {
                 }
             };
             // Overriding handler fxn
-            razorPayOptions_1.handler = (function (response) {
-                console.log(':: razorpay response after payment done', response);
-                var rzp_order_id = _this.checkoutService.getOrderId();
-                _this.checkoutService.capturePayment(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({}, response, { amount: _this.price, rzp_order_id: rzp_order_id })).subscribe(function (res) {
-                    console.log(':: captured payment successfuly', res);
-                    if (res.error_code == null) {
-                        _this.windowService.window.location.href = "/login";
-                    }
-                    else {
-                        _this.windowService.window.location.href = "/payment-failed";
-                    }
-                    // this.windowService.window.location.href="/payment-success";
-                }, function (err) {
-                    _this.router.navigate[('payment-failed')];
-                    //this.windowService.window.location.href="/payment-failed";
-                });
-            });
+            razorPayOptions_1.handler = (this.handler).bind(this);
             // placeOrder on Server
             console.log(':: proceed button clicked');
             var slideData = this.CustomSlideService.slideData;
@@ -2441,11 +2426,36 @@ var CheckoutComponent = /** @class */ (function () {
     CheckoutComponent.prototype.handleCancel = function () {
         this.router.navigateByUrl('/');
     };
+    CheckoutComponent.prototype.handler = function (response) {
+        var _this = this;
+        console.log(':: razorpay response after payment done', response);
+        var rzp_order_id = this.checkoutService.getOrderId();
+        this.checkoutService.capturePayment(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({}, response, { amount: this.price, rzp_order_id: rzp_order_id })).subscribe(function (res) {
+            console.log(':: captured payment successfuly', res);
+            if (res.error_code == null) {
+                _this.zone.run(function () {
+                    _this.router.navigate(['/login']);
+                });
+            }
+            else {
+                _this.zone.run(function () {
+                    _this.router.navigate[('payment-failed')];
+                });
+            }
+            // this.windowService.window.location.href="/payment-success";
+        }, function (err) {
+            _this.zone.run(function () {
+                _this.router.navigate[('payment-failed')];
+            });
+            //this.windowService.window.location.href="/payment-failed";
+        });
+    };
     CheckoutComponent.ctorParameters = function () { return [
         { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
         { type: src_app_custom_slide_service_service__WEBPACK_IMPORTED_MODULE_3__["CustomSlideService"] },
         { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
         { type: src_app_checkout_service__WEBPACK_IMPORTED_MODULE_5__["CheckoutService"] },
+        { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"] },
         { type: src_app_window_service__WEBPACK_IMPORTED_MODULE_7__["WindowService"] },
         { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"] },
         { type: src_app_custom_slide_service_service__WEBPACK_IMPORTED_MODULE_3__["CustomSlideService"] }
@@ -3001,7 +3011,7 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 var environment = {
-    API_URL: "/backend/",
+    API_URL: "http://95.111.199.28/backend/",
     production: false,
     razorpay: {
         key: 'rzp_test_d8qs8mxXhWH9vS',
